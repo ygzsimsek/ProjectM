@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_tuner"
+        android:icon="@drawable/ic_guitar_pick_outline"
+        android:title="@string/title_tuner" />
+
+    <item
+        android:id="@+id/navigation_metronome"
+        android:icon="@drawable/ic_metronome"
+        android:title="@string/title_metronome" />
+
+    <item
+        android:id="@+id/navigation_backing_tracks"
+        android:icon="@drawable/ic_heart"
+        android:title="@string/title_backing_tracks" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_outline"
+        android:title="@string/title_settings" />
+
+</menu>
