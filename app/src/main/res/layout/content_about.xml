@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".AboutActivity"
-    tools:showIn="@layout/activity_about">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,9 +11,11 @@
         android:orientation="vertical" >
 
         <androidx.cardview.widget.CardView
+            android:layout_margin="8dp"
+            android:padding="4dp"
             android:id="@+id/card_yagiz"
             android:visibility="visible"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -25,102 +24,155 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView2"
+                <RelativeLayout
+                    android:padding="8dp"
+                    android:gravity="center_horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:gravity="center"
-                    android:text="@string/author"
-                    android:textAllCaps="true"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:gravity="center"
-                    android:text="@string/follow"
-                    android:textSize="18sp" />
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        app:srcCompat="@mipmap/ic_launcher" />
 
-                <ImageButton
-                    android:layout_margin="4dp"
-                    android:id="@+id/btn_instagram"
-                    android:layout_width="match_parent"
-                    android:layout_height="64dp"
-                    android:background="@color/instagram_purple"
-                    app:srcCompat="@drawable/ic_instagram" />
+                    <LinearLayout
+                        android:layout_toEndOf="@id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                <ImageButton
-                    android:layout_margin="4dp"
-                    android:id="@+id/btn_reddit"
-                    android:layout_width="match_parent"
-                    android:layout_height="64dp"
-                    android:background="@color/reddit_orange"
-                    app:srcCompat="@drawable/ic_reddit" />
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:gravity="center"
+                            android:text="@string/author"
+                            android:textAllCaps="true"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:text="@string/follow"
+                            android:textSize="18sp" />
 
-                <ImageButton
-                    android:layout_margin="4dp"
-                    android:id="@+id/btn_telegram"
-                    android:layout_width="match_parent"
-                    android:layout_height="64dp"
-                    android:background="@color/telegram_blue"
-                    app:srcCompat="@drawable/ic_telegram" />
+                    </LinearLayout>
+                </RelativeLayout>
 
-                <ImageButton
-                    android:layout_margin="4dp"
-                    android:id="@+id/btn_twitter"
-                    android:layout_width="match_parent"
-                    android:layout_height="64dp"
-                    android:background="@color/twitter_blue"
-                    app:srcCompat="@drawable/ic_twitter" />
-
-                <ImageButton
-                    android:layout_margin="4dp"
+                <Button
                     android:id="@+id/btn_github"
                     android:layout_width="match_parent"
-                    android:layout_height="64dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
                     android:background="@color/black_overlay"
-                    app:srcCompat="@drawable/ic_github" />
+                    android:drawableStart="@drawable/ic_github"
+                    android:padding="8dp"
+                    android:text="@string/github" />
+
+                <Button
+                    android:text="@string/instagram"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:background="@color/instagram_purple"
+                    android:drawableStart="@drawable/ic_instagram"
+                    android:id="@+id/btn_instagram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btn_reddit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/reddit_orange"
+                    android:drawableStart="@drawable/ic_reddit"
+                    android:padding="8dp"
+                    android:text="@string/reddit" />
+
+                <Button
+                    android:id="@+id/btn_facebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/facebook_blue"
+                    android:drawableStart="@drawable/ic_facebook"
+                    android:padding="8dp"
+                    android:text="@string/facebook" />
+
+                <Button
+                    android:text="@string/telegram"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:background="@color/telegram_blue"
+                    android:drawableStart="@drawable/ic_telegram"
+                    android:id="@+id/btn_telegram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:text="@string/twitter"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:background="@color/twitter_blue"
+                    android:drawableStart="@drawable/ic_twitter"
+                    android:id="@+id/btn_twitter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:visibility="gone"
+            app:cardCornerRadius="4dp"
+            android:layout_margin="8dp"
+            android:padding="4dp"
+            android:visibility="visible"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+
+                <Button
+                    android:background="@color/black_overlay"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_mode_edit_black"
+                    android:id="@+id/btn_changelog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/changelog" />
+
+                <Button
+                    android:background="@color/black_overlay"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_information_outline"
+                    android:id="@+id/btn_osl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_oss" />
+
+                <Button
+                    android:background="@color/black_overlay"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_heart_outline"
+                    android:id="@+id/btn_tnx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thanks" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-        <Button
-            android:layout_margin="4dp"
-            android:drawableStart="@drawable/ic_mode_edit_black"
-            android:id="@+id/btn_changelog"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:text="@string/changelog" />
-
-        <Button
-            android:layout_margin="4dp"
-            android:drawableStart="@drawable/ic_information_outline"
-            android:id="@+id/btn_osl"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:text="@string/btn_oss" />
-
-        <Button
-            android:layout_margin="4dp"
-            android:drawableStart="@drawable/ic_heart_outline"
-            android:id="@+id/btn_tnx"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:text="@string/thanks" />
 
 
     </LinearLayout>
+
 </androidx.core.widget.NestedScrollView>

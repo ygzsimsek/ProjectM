@@ -6,14 +6,21 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_tuner">Tuner</string>
     <string name="title_metronome">Metronome</string>
-    <string name="title_backing_tracks">Metronome</string>
-    <string name="title_settings">Settings</string>
+    <string name="title_backing_tracks">BACKING TRACKS</string>
+    <string name="title_settings">SETTINGS</string>
+    <string name="version">VERSION 0.4.8 Alpha Preview</string>
+    <string name="title_activity_info">About</string>
+    <string name="github">GITHUB</string>
+    <string name="instagram">INSTAGRAM</string>
+    <string name="reddit">REDDIT</string>
+    <string name="facebook">FACEBOOK</string>
+    <string name="telegram">TELEGRAM</string>
+    <string name="twitter">TWITTER</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_about">About</string>
-    <string name="btn_oss">"   Open Source Licenses"</string>
-    <string name="btn_about">"   About"</string>
+    <string name="btn_oss">"Open Source Licenses"</string>
+    <string name="btn_about">"About"</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="title_activity_about">AboutActivity</string>
     <string name="large_text">
@@ -106,8 +113,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
-    <string name="Close" />
-    <string name="action_close" />
     <string name="oss_text">Open source licenses will be shown here</string>
     <string name="light_theme">Light Theme</string>
     <string name="author">Yağız Şimşek</string>
@@ -115,4 +120,72 @@
     <string name="thanks">Thanks to</string>
     <string name="changelog">Changelog</string>
     <string name="ok">ok</string>
+    <!-- TUNER -->
+    <string name="pref_dark_theme_key" translatable="false">pref_dark_theme</string>
+    <string name="pref_dark_theme_title">Dark theme</string>
+    <string name="pref_tuning_key" translatable="false">pref_tuning</string>
+    <string name="pref_tuning_title">Tuning</string>
+    <!-- Tuning names -->
+    <string name="standard_tuning">Standard</string>
+    <string name="open_a_tuning">Open A</string>
+    <string name="open_g_tuning">Open G</string>
+    <string name="open_d_tuning">Open D</string>
+    <string name="drop_d_tuning">Drop D</string>
+
+    <string name="standard_tuning_val" translatable="false">Standard</string>
+    <string name="open_a_tuning_val" translatable="false">Open A</string>
+    <string name="open_g_tuning_val" translatable="false">Open G</string>
+    <string name="open_d_tuning_val" translatable="false">Open D</string>
+    <string name="drop_d_tuning_val" translatable="false">Drop D</string>
+
+    <string-array name="pref_tuning_entries">
+        <item>@string/standard_tuning</item>
+        <item>@string/open_a_tuning</item>
+        <item>@string/open_g_tuning</item>
+        <item>@string/open_d_tuning</item>
+        <item>@string/drop_d_tuning</item>
+    </string-array>
+
+    <string-array name="pref_tuning_values">
+        <item>@string/standard_tuning_val</item>
+        <item>@string/open_a_tuning_val</item>
+        <item>@string/open_g_tuning_val</item>
+        <item>@string/open_d_tuning_val</item>
+        <item>@string/drop_d_tuning_val</item>
+    </string-array>
+    <string name="permission">Permission</string>
+    <string name="permission_record_audio">The app must be able to use the microphone.</string>
+    <string name="audio_record_init_error">Could not initialize AudioRecord.</string>
+    <string name="pref_privacy_policy_title">Privacy policy</string>
+    <string name="pref_privacy_policy_key" translatable="false">pref_privacy_policy</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_nav">NavActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- INTRO SLIDER -->
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello Food!</string>
+    <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
+
+    <string name="slide_2_title">Movie Tickets</string>
+    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
+
+    <string name="slide_3_title">Great Discounts</string>
+    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="microphone">ALLOW MICROPHONE</string>
+    <string name="action_close">Close</string>
+
 </resources>

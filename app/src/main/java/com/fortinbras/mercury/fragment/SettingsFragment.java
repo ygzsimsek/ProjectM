@@ -8,7 +8,6 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +16,8 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.fortinbras.mercury.AboutActivity;
 import com.fortinbras.mercury.R;
+import com.fortinbras.mercury.activity.AboutActivity;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class SettingsFragment extends Fragment implements View.OnClickListener {
@@ -45,13 +44,13 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
-        btn_about = (Button)view.findViewById(R.id.btn_about);
-        btn_oss = (Button)view.findViewById(R.id.btn_oss);
-        btn_tuning = (Button)view.findViewById(R.id.btn_select_tuning);
-        btn_tick = (Button)view.findViewById(R.id.btn_tick_snd);
-        btn_kalp= (Button)view.findViewById(R.id.button7);
-        btn_ins= (Button)view.findViewById(R.id.btn_select_instrument);
-        switch_dt = (SwitchMaterial)view.findViewById(R.id.switch_dt);
+        btn_about = view.findViewById(R.id.btn_about);
+        btn_oss = view.findViewById(R.id.btn_oss);
+        btn_tuning = view.findViewById(R.id.btn_select_tuning);
+        btn_tick = view.findViewById(R.id.btn_tick_snd);
+        btn_kalp= view.findViewById(R.id.button7);
+        btn_ins= view.findViewById(R.id.btn_select_instrument);
+        switch_dt = view.findViewById(R.id.switch_dt);
         //onclick events
         btn_oss.setOnClickListener(this);
         btn_about.setOnClickListener(this);

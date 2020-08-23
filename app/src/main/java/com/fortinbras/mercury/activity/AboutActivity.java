@@ -1,4 +1,4 @@
-package com.fortinbras.mercury;
+package com.fortinbras.mercury.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,36 +8,44 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.Html;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class AboutActivity extends AppCompatActivity implements View.OnClickListener {
+import com.fortinbras.mercury.R;
 
-    ImageButton btn_reddit, btn_ig, btn_telegram, btn_github, btn_twitter;
-    Button btn_osl, btn_tnx, btn_clog;
+public class AboutActivity extends AppCompatActivity implements View.OnClickListener{
+
+    //TODO: ADD YOUTUBE CHANNEL
+    Button btn_osl, btn_tnx, btn_clog,btn_reddit, btn_ig, btn_telegram, btn_github, btn_twitter,btn_facebook;
+    Html htmlOsl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setTitle(R.string.app_name);
         //btn
-        btn_reddit = (ImageButton) findViewById(R.id.btn_reddit);
-        btn_ig = (ImageButton) findViewById(R.id.btn_instagram);
-        btn_telegram = (ImageButton) findViewById(R.id.btn_telegram);
-        btn_github = (ImageButton) findViewById(R.id.btn_github);
-        btn_twitter = (ImageButton) findViewById(R.id.btn_twitter);
-        btn_osl = (Button) findViewById(R.id.btn_osl);
-        btn_tnx = (Button) findViewById(R.id.btn_tnx);
-        btn_clog = (Button) findViewById(R.id.btn_changelog);
+        btn_facebook = findViewById(R.id.btn_facebook);
+        btn_reddit = findViewById(R.id.btn_reddit);
+        btn_ig = findViewById(R.id.btn_instagram);
+        btn_telegram = findViewById(R.id.btn_telegram);
+        btn_github = findViewById(R.id.btn_github);
+        btn_twitter = findViewById(R.id.btn_twitter);
+        btn_osl = findViewById(R.id.btn_osl);
+        btn_tnx = findViewById(R.id.btn_tnx);
+        btn_clog = findViewById(R.id.btn_changelog);
         //onclicklistener
         btn_reddit.setOnClickListener(this);
         btn_ig.setOnClickListener(this);
@@ -48,53 +56,62 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         btn_tnx.setOnClickListener(this);
         btn_clog.setOnClickListener(this);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //TODO: SET E MAIL ACTION
+                Snackbar.make(view, "TODO: SET E MAIL ACTION", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
     }
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()== android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        switch (v.getId()){
+            case R.id.btn_facebook:
+                String fb = "https://www.facebook.com/profile.php?id=100015364983025";
+                Intent f = new Intent(Intent.ACTION_VIEW);
+                f.setData(Uri.parse(fb));
+                startActivity(f);
             case R.id.btn_instagram:
                 String ig = "https://www.instagram.com/fortinbrasgood/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(ig));
                 startActivity(i);
-                Toast.makeText(this, "ig", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_reddit:
                 String rd = "https://www.reddit.com/user/fortinbrasgod/";
                 Intent r = new Intent(Intent.ACTION_VIEW);
                 r.setData(Uri.parse(rd));
                 startActivity(r);
-                Toast.makeText(this, "reddit", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_telegram:
                 String tg = "https://t.me/fortinbrasgod/";
                 Intent t = new Intent(Intent.ACTION_VIEW);
                 t.setData(Uri.parse(tg));
                 startActivity(t);
-                Toast.makeText(this, "telegram", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_twitter:
-                String tw = "https://t.me/fortinbrasgod/";
+                String tw = "https://twitter.com/fortinbrasgood/";
                 Intent w = new Intent(Intent.ACTION_VIEW);
                 w.setData(Uri.parse(tw));
                 startActivity(w);
-                Toast.makeText(this, "tw", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_github:
                 String gt = "https://github.com/ygzsimsek/";
                 Intent g = new Intent(Intent.ACTION_VIEW);
                 g.setData(Uri.parse(gt));
                 startActivity(g);
-                Toast.makeText(this, "github", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_changelog:
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -117,7 +134,7 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
                 AlertDialog.Builder alertDialogOSL = new AlertDialog.Builder(this);
                 alertDialogOSL.setTitle("OPEN SOURCE LICANSES");
                 alertDialogOSL
-                        .setMessage("OPEN SOURCE LICANSES")
+                        .setMessage("https://github.com/andryr/guitar-tuner")
                         .setCancelable(true)
                         .setIcon(R.drawable.ic_information_outline)
                         .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
@@ -148,6 +165,5 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(this, "thanks", Toast.LENGTH_SHORT).show();
                 break;
         }
-
     }
 }

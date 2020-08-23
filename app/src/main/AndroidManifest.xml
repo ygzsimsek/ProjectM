@@ -2,29 +2,57 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fortinbras.mercury">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppThemeDark">
+        <activity android:name=".activity.WelcomeActivity"
+            android:label="@string/title_activity_info"
+            android:theme="@style/AppThemeDark.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".AboutActivity"
-            android:label="@string/title_activity_about"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".activity.AboutActivity"
+            android:label="@string/title_about"
+            android:theme="@style/AppThemeDark.NoActionBar" />
+        <activity android:name=".activity.NavActivity" />
         <activity
-            android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:theme="@style/FullScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity> <!-- TUNER -->
+        <activity
+            android:name=".tuner.TunerActivity"
+            android:label="@string/title_tuner">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tuner.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".tuner.TunerActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".tuner.TunerActivity" />
         </activity>
     </application>
 
